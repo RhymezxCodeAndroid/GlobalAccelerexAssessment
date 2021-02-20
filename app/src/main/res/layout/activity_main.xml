@@ -11,12 +11,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.braintreepayments.cardform.view.CardEditText
+            <com.braintreepayments.cardform.view.CardForm
                 android:id="@+id/card_number"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/stoke_style"
                 android:paddingStart="10dp"
@@ -26,7 +26,7 @@
                 android:textColor="@color/colorPrimaryDark"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/card_scheme_label2" />
 
             <Button
                 android:id="@+id/proceed"
@@ -51,7 +51,7 @@
                 android:id="@+id/divider"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:background="@android:color/darker_gray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -65,140 +65,234 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                android:fontFamily="@font/pacifico"
+                android:fontFamily="@font/roboto_regular"
                 android:text="@string/card_information"
                 android:textAlignment="center"
+                android:textAllCaps="true"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="36sp"
+                android:textSize="24sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider" />
 
-            <com.rengwuxian.materialedittext.MaterialEditText
+            <TextView
+                android:id="@+id/card_scheme_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/card_scheme"
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_info" />
+
+            <TextView
                 android:id="@+id/card_scheme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:background="@drawable/stoke_style"
-                android:backgroundTint="#D9D9D9"
+                android:drawableStart="@drawable/ic_baseline_arrow_forward_ios_24"
                 android:fontFamily="@font/roboto_regular"
-                android:gravity="start|bottom"
                 android:hint="@string/card_scheme"
-                android:inputType="textMultiLine"
                 android:padding="15dp"
-                android:singleLine="false"
                 android:textColor="@color/colorPrimaryDark"
-                android:textColorHint="@color/colorAccent"
-                android:textSize="14sp"
+                android:textSize="18sp"
+                app:layout_constrainedWidth="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card_info"/>
+                app:layout_constraintTop_toBottomOf="@+id/card_scheme_label" />
 
-            <com.rengwuxian.materialedittext.MaterialEditText
+            <TextView
+                android:id="@+id/card_type_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/card_type"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_scheme" />
+
+            <TextView
                 android:id="@+id/card_type"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:background="@drawable/stoke_style"
-                android:backgroundTint="#D9D9D9"
+                android:drawableStart="@drawable/ic_baseline_arrow_forward_ios_24"
                 android:fontFamily="@font/roboto_regular"
-                android:gravity="start|bottom"
                 android:hint="@string/card_type"
-                android:inputType="textMultiLine"
                 android:padding="15dp"
-                android:singleLine="false"
                 android:textColor="@color/colorPrimaryDark"
-                android:textColorHint="@color/colorAccent"
-                android:textSize="14sp"
+                android:textSize="18sp"
+                app:layout_constrainedWidth="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card_scheme"/>
+                app:layout_constraintTop_toBottomOf="@+id/card_type_label" />
 
-            <com.rengwuxian.materialedittext.MaterialEditText
+            <TextView
+                android:id="@+id/bank_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/bank"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_type" />
+
+            <TextView
                 android:id="@+id/bank"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:background="@drawable/stoke_style"
-                android:backgroundTint="#D9D9D9"
+                android:drawableStart="@drawable/ic_baseline_arrow_forward_ios_24"
                 android:fontFamily="@font/roboto_regular"
-                android:gravity="start|bottom"
                 android:hint="@string/bank"
-                android:inputType="textMultiLine"
                 android:padding="15dp"
-                android:singleLine="false"
                 android:textColor="@color/colorPrimaryDark"
-                android:textColorHint="@color/colorAccent"
-                android:textSize="14sp"
+                android:textSize="18sp"
+                app:layout_constrainedWidth="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card_type" />
+                app:layout_constraintTop_toBottomOf="@+id/bank_label" />
 
-            <com.rengwuxian.materialedittext.MaterialEditText
+            <TextView
+                android:id="@+id/country_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/country"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bank" />
+
+            <TextView
                 android:id="@+id/country"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:background="@drawable/stoke_style"
-                android:backgroundTint="#D9D9D9"
+                android:drawableStart="@drawable/ic_baseline_arrow_forward_ios_24"
                 android:fontFamily="@font/roboto_regular"
-                android:gravity="start|bottom"
                 android:hint="@string/country"
-                android:inputType="textMultiLine"
                 android:padding="15dp"
-                android:singleLine="false"
                 android:textColor="@color/colorPrimaryDark"
-                android:textColorHint="@color/colorAccent"
-                android:textSize="14sp"
+                android:textSize="18sp"
+                app:layout_constrainedWidth="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bank"/>
+                app:layout_constraintTop_toBottomOf="@+id/country_label" />
 
-            <com.rengwuxian.materialedittext.MaterialEditText
+            <TextView
+                android:id="@+id/card_number_length_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/card_number_length"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/country" />
+
+            <TextView
                 android:id="@+id/card_number_length"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:background="@drawable/stoke_style"
-                android:backgroundTint="#D9D9D9"
+                android:drawableStart="@drawable/ic_baseline_arrow_forward_ios_24"
                 android:fontFamily="@font/roboto_regular"
-                android:gravity="start|bottom"
                 android:hint="@string/card_number_length"
-                android:inputType="textMultiLine"
                 android:padding="15dp"
-                android:singleLine="false"
                 android:textColor="@color/colorPrimaryDark"
-                android:textColorHint="@color/colorAccent"
-                android:textSize="14sp"
+                android:textSize="18sp"
+                app:layout_constrainedWidth="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/country"/>
+                app:layout_constraintTop_toBottomOf="@+id/card_number_length_label" />
 
-            <com.rengwuxian.materialedittext.MaterialEditText
+            <TextView
+                android:id="@+id/prepaid_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/prepaid"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_number_length" />
+
+            <TextView
                 android:id="@+id/prepaid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:background="@drawable/stoke_style"
-                android:backgroundTint="#D9D9D9"
+                android:layout_marginBottom="20dp"
+                android:drawableStart="@drawable/ic_baseline_arrow_forward_ios_24"
                 android:fontFamily="@font/roboto_regular"
-                android:gravity="start|bottom"
                 android:hint="@string/prepaid"
-                android:inputType="textMultiLine"
                 android:padding="15dp"
-                android:singleLine="false"
                 android:textColor="@color/colorPrimaryDark"
-                android:textColorHint="@color/colorAccent"
-                android:textSize="14sp"
+                android:textSize="18sp"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card_number_length" />
+                app:layout_constraintTop_toBottomOf="@+id/prepaid_label" />
+
+            <TextView
+                android:id="@+id/card_scheme_label2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="68dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/instruction"
+                android:textAlignment="center"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

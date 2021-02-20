@@ -4,12 +4,12 @@ import CheckNetwork.isConnected
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.braintreepayments.cardform.view.CardForm
 import com.e.globalaccelerexassessment.R
 import com.e.globalaccelerexassessment.repository.CardRepository
 import com.google.android.material.snackbar.Snackbar
-import com.rengwuxian.materialedittext.MaterialEditText
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -26,20 +26,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     //Views
     private var cardForm: CardForm? = null
-    private var cardScheme: MaterialEditText? = null
-    private var cardType: MaterialEditText? = null
-    private var bankName: MaterialEditText? = null
-    private var countryName: MaterialEditText? = null
-    private var cardLength: MaterialEditText? = null
-    private var prepaid: MaterialEditText? = null
+    private var cardScheme: TextView? = null
+    private var cardType: TextView? = null
+    private var bankName: TextView? = null
+    private var countryName: TextView? = null
+    private var cardLength: TextView? = null
+    private var prepaid: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         setContentView(R.layout.activity_main)
-    }
 
-    init {
+        //Initialize views
         cardForm = findViewById(R.id.card_number)
         cardScheme = findViewById(R.id.card_scheme)
         cardType = findViewById(R.id.card_type)
@@ -59,7 +58,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 R.id.proceed -> {
                     if (isConnected(this)) {
                         if (cardForm!!.cardNumber.isNotEmpty()) {
-                            if (cardForm!!.cardNumber.toLong() < 6 || cardForm!!.cardNumber.toLong() > 9) {
+                            if (!(cardForm!!.cardNumber.length >= 6 && cardForm!!.cardNumber.length <= 9)) {
                                 Snackbar.make(
                                     findViewById(android.R.id.content),
                                     "Please enter the first 6 or 9 digits of your debit card",
