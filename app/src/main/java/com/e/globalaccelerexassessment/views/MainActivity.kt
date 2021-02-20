@@ -3,7 +3,9 @@ package com.e.globalaccelerexassessment.views
 import CheckNetwork.isConnected
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.braintreepayments.cardform.view.CardForm
@@ -65,19 +67,23 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                                     Snackbar.LENGTH_SHORT
                                 ).show()
                             } else {
-                                repo.getInformation(activity, cardForm!!.cardNumber) { CardInfoPage ->
+                                repo.getInformation(
+                                    activity,
+                                    cardForm!!.cardNumber
+                                ) { CardInfoPage ->
+                                    hideKeyboard()
                                     cardScheme!!.setText(CardInfoPage.scheme)
                                     cardType!!.setText(CardInfoPage.type)
                                     bankName!!.setText(CardInfoPage.bank!!.name)
                                     countryName!!.setText(CardInfoPage.country!!.name)
                                     cardLength!!.setText(CardInfoPage.number!!.length.toString())
-                                    if(CardInfoPage.prepaid == true)prepaid!!.setText("Yes") else prepaid!!.setText("No")
+                                    if (CardInfoPage.prepaid == true) prepaid!!.setText("Yes") else prepaid!!.setText("No")
                                 }
                             }
-                        }else {
+                        } else {
                             Snackbar.make(
                                 findViewById(android.R.id.content),
-                                "Please enter all your card number!!!!",
+                                "Please enter your card number!!!!",
                                 Snackbar.LENGTH_SHORT
                             ).show()
                         }
@@ -115,6 +121,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             backPressed = System.currentTimeMillis()
         }
     }
+
+    private fun hideKeyboard() {
+        try {
+            val inputManager: InputMethodManager =
+                getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+            inputManager.hideSoftInputFromWindow(currentFocus!!.windowToken,
+                InputMethodManager.HIDE_NOT_ALWAYS
+            )
+        } catch (e: Exception) {
+            Log.e("Error hideKeyboard: $e", e.toString())
+        }
+    }
+
 
 
 }
