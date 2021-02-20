@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.braintreepayments.cardform.view.CardEditText
+                android:id="@+id/card_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/stoke_style"
+                android:paddingStart="10dp"
+                android:paddingTop="15dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="15dp"
+                android:textColor="@color/colorPrimaryDark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/proceed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="100dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="sans-serif"
+                android:text="@string/proceed"
+                android:textAllCaps="true"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_number" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/proceed" />
+
+            <TextView
+                android:id="@+id/card_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/pacifico"
+                android:text="@string/card_information"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="36sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/card_scheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/stoke_style"
+                android:backgroundTint="#D9D9D9"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="start|bottom"
+                android:hint="@string/card_scheme"
+                android:inputType="textMultiLine"
+                android:padding="15dp"
+                android:singleLine="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_info"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/card_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/stoke_style"
+                android:backgroundTint="#D9D9D9"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="start|bottom"
+                android:hint="@string/card_type"
+                android:inputType="textMultiLine"
+                android:padding="15dp"
+                android:singleLine="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_scheme"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/bank"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/stoke_style"
+                android:backgroundTint="#D9D9D9"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="start|bottom"
+                android:hint="@string/bank"
+                android:inputType="textMultiLine"
+                android:padding="15dp"
+                android:singleLine="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_type" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/stoke_style"
+                android:backgroundTint="#D9D9D9"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="start|bottom"
+                android:hint="@string/country"
+                android:inputType="textMultiLine"
+                android:padding="15dp"
+                android:singleLine="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bank"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/card_number_length"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/stoke_style"
+                android:backgroundTint="#D9D9D9"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="start|bottom"
+                android:hint="@string/card_number_length"
+                android:inputType="textMultiLine"
+                android:padding="15dp"
+                android:singleLine="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/country"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/prepaid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/stoke_style"
+                android:backgroundTint="#D9D9D9"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="start|bottom"
+                android:hint="@string/prepaid"
+                android:inputType="textMultiLine"
+                android:padding="15dp"
+                android:singleLine="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_number_length" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:contentInsetStart="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/back"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:background="@color/colorPrimaryDark"
+                android:clickable="true"
+                android:contentDescription="@string/back"
+                android:focusable="true"
+                android:scaleType="centerCrop"
+                android:soundEffectsEnabled="true"
+                android:src="@drawable/ic_arrow_back_black_24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+</FrameLayout>
+
+
+
